@@ -1,14 +1,14 @@
 #include<stdio.h>
 int main()
 {
-    int n;
+    int n,c=0,oc=0;
     scanf("%d",&n);
-    int a[n],i,c=0,co=0;
-    for(i=0;i<n;i++)
+    int a[n];
+    for(int i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
     }
-    for(i=0;i<n;i++)
+    for(int i=0;i<n;i++)
     {
         if(i%2!=0)
         {
@@ -16,14 +16,15 @@ int main()
             {
                 c++;
             }
-        }
-        if(a[i]%2!=0)
-        {
-            co++;
+            oc++;
         }
     }
-    if(c==co)
-    printf("True");
+    if(oc==c)
+    {
+        printf("True");
+    }
     else
-    printf("False");
+    {
+        printf("False");
+    }
 }
