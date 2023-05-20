@@ -1,28 +1,39 @@
-#include<stdio.h>
-int fact(int n)
-{
-    if(n==1 || n==0)
-    {
-    return 1;
-    }
+#include <stdio.h>
+
+int factorial(int n) {
+    if (n == 0)
+        return 1;
     else
-    {
-    return n*fact(n-1);
-    }
+        return n * factorial(n - 1);
 }
-int main()
-{
-    int n,sum=0;
-    scanf("%d",&n);
-    int v=n;
-    while(n!=0)
-    {
-        int r=n%10;
-        sum=sum+fact(r);
-        n/=10;
+
+int isStrongNumber(int num) {
+    int digitSum = 0;
+    int originalNum = num;
+
+    while (num > 0) {
+        int digit = num % 10;
+        digitSum += factorial(digit);
+        num /= 10;
     }
-    if(sum==v)
-    printf("The number %d is a strong number",v);
+
+    return digitSum == originalNum;
+}
+
+int main() {
+    int n;
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+    int number;
+    scanf("%d",&number);
+    if (isStrongNumber(number))
+        printf("Strong
+");
     else
-    printf("The number %d is not a strong number",v);
+        printf("Not Strong
+");
+    }
+
+    return 0;
 }
