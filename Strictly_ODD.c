@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,c=0,oc=0;
+    int n,c=0,co=0;
     scanf("%d",&n);
     int a[n];
     for(int i=0;i<n;i++)
@@ -16,15 +16,11 @@ int main()
             {
                 c++;
             }
-            oc++;
+            co++;
         }
     }
-    if(oc==c)
-    {
-        printf("True");
-    }
+    if(c==co)
+    printf("True");
     else
-    {
-        printf("False");
-    }
+    printf("False");
 }
