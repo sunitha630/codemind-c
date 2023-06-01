@@ -1,24 +1,24 @@
 #include<stdio.h>
 int main()
 {
-    int tc,i;
+    int tc,n;
     scanf("%d",&tc);
-    for(i=1;i<=tc;i++)
+    for(int i=0;i<tc;i++)
     {
-        int n,r=0,t,temp;
         scanf("%d",&n);
-        temp=n;
-        while(n!=0)
-        {
-            t=n%10;
-            r=(r*10)+t;
-            n/=10;
-        }
-        if(temp==r)
+        int temp=n,sum=0;
+        while(n>0)    
+        {    
+        int r=n%10;    
+        sum=(sum*10)+r;    
+        n=n/10;    
+        }    
+        if(temp==sum)    
         printf("True
-");
+");   
         else
         printf("False
 ");
+        
     }
 }
